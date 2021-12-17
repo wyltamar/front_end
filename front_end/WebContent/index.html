@@ -5,7 +5,7 @@
 <title>My Home</title>
 </head>
 <body>
-	<form action="">
+	<form action="" method= "post" onsubmit="return validarDados() ? true : false">
 		<table style="background-color: #8B8989; border-radius: 5px; text-transform: uppercase">
 			<tr>
 				<td><label>Name:</label></td>
@@ -25,10 +25,32 @@
 			<tr>
 				<td>
 				<td><input type="submit" value="save" style="width: 100%; background-color: #00FF00;
-				            border-radius: 5px; text-transform: uppercase"></td>
+				            border-radius: 5px; text-transform: uppercase" ></td>
 				<td>
 			</tr>
 		</table>
 	</form>
 </body>
+<script type="text/javascript">
+	function validarDados(){
+		var nome = document.getElementById("name").value;
+		var login = document.getElementById("login").value;
+		var senha = document.getElementById("password").value;
+
+		if(nome == ""){
+			alert("Informe um nome!")
+			return false;
+		}
+		else if(login == ""){
+			alert("Informe um login!")
+			return false;
+		}
+		else if(senha == ""){
+			alert("Informe a senha!")
+			return false;
+		}
+		
+		return true;
+	}
+</script>
 </html>
